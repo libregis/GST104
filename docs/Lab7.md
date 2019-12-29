@@ -1,5 +1,4 @@
-# GST 104: Cartographic Design
-## Lab 7: Design and Label a Downtown Street Map
+# Lab 7: Design and Label a Downtown Street Map
 ### Objective – Utilize QGIS and Inkscape to Design and Label a Street Map of a Downtown Area
 
 Document Version: 5/10/2015
@@ -46,7 +45,7 @@ In this task, you will label roads, water, and parks using basic labeling techni
 
 [1]: http://www.openstreetmap.org
 
-![Symbolized Downtown Salem Massachusetts](figures/Symbolized_Downtown_Salem_Massachusetts.png "Symbolized Downtown Salem Massachusetts")
+![Symbolized Downtown Salem Massachusetts](figures/lab7/Symbolized_Downtown_Salem_Massachusetts.png "Symbolized Downtown Salem Massachusetts")
 
 4. Open the Label Properties for the Waterways layer by right-clicking on the Layer in the Layers list, then choosing ‘Properties’ from the contextual menu, then choosing the ‘Labels’ tab.
 5. Check ‘Label this layer with’ and choose ‘name’ as the labeling attribute.
@@ -64,12 +63,12 @@ In this task, you will label roads, water, and parks using basic labeling techni
 			+ Above line: unchecked
 			+ On line: checked
 
-![Waterways Label Properties](figures/Waterways_Label_Properties_1.png "Waterways Label Properties")
-![Waterways Label Properties](figures/Waterways_Label_Properties_2.png "Waterways Label Properties")
+![Waterways Label Properties](figures/lab7/Waterways_Label_Properties_1.png "Waterways Label Properties")
+![Waterways Label Properties](figures/lab7/Waterways_Label_Properties_2.png "Waterways Label Properties")
 
 7. Click OK.  Look at the South River label in the bottom-right corner of the map.  Notice that it overlaps with the road (shown in the figure below).  This is not a desirable label placement.  Unfortunately, with the basic labeling options, we cannot do anything about this, however, we will address this problem in Task 2.
 
-![South River Label Placement](figures/South_River_Label_Placement.png "South River Label Placement")
+![South River Label Placement](figures/lab7/South_River_Label_Placement.png "South River Label Placement")
 
 Now that the Waterways are labeled, we will label the Natural areas, which all happen to be parks in our map.
 
@@ -90,7 +89,7 @@ Now that the Waterways are labeled, we will label the Natural areas, which all h
 
 Find Armory Park just East of the center of the map (shown in the figure below).  Notice that the label runs over on to the adjacent building.  Again, not much we can do about this with basic labeling, so we will address the problem in Task 2.
 
-![Armory Park Label Placement](figures/Armory_Park_Label_Placement.png "Armory Park Label Placement")
+![Armory Park Label Placement](figures/lab7/Armory_Park_Label_Placement.png "Armory Park Label Placement")
 
 Lastly, for this Task, let’s label the Roads layer.
 
@@ -111,7 +110,7 @@ Lastly, for this Task, let’s label the Roads layer.
 			+ On line: checked
 15. Click OK to set the Road labels.  The basic labeling does a pretty good job in labeling the roads.  There are a few issues, however, that need attention.  Four examples are shown in the figure below.  
 
-![Label Problem Areas](figures/Label_Problem_Areas.png "Label Problem Areas")
+![Label Problem Areas](figures/lab7/Label_Problem_Areas.png "Label Problem Areas")
 
 + (a) displays an example of a street label overrunning the street it is labeling. 
 + (b) displays a street being labeling multiple times and both labels being in close proximity to each other.
@@ -132,21 +131,21 @@ We can address (b) from the figure above by changing a labeling property.  Let�
 
 Labeling a map increases its usefulness to the map reader if the labels are done well.  The Salem Downtown map labels are decent for as little work that we put in to labeling the features, however, the map labels are far from publishable quality. This task will teach you how to use Data Defined Overrides to improve placement, define different labeling properties for records of different types, and hide labels, among other things.
 
-First, let’s determine what a Data Defined Override is, and how to identify where they can be set.  A Data Defined Override sets a layer property to a value stored in an attribute field in the layer.  For example, a layer’s label font, style, size, size unit, and color can all be set by referencing attribute values for the layer that is being labeled.  Each text property that can be set with a Data Defined Override will have this button beside the property: ![Data Defined Override Button](figures/Data_Defined_Override_Button.png "Data Defined Override Button")  The figure below shows a small example of where the Data Defined Override buttons are located and which properties can be set with the Overrides.
+First, let’s determine what a Data Defined Override is, and how to identify where they can be set.  A Data Defined Override sets a layer property to a value stored in an attribute field in the layer.  For example, a layer’s label font, style, size, size unit, and color can all be set by referencing attribute values for the layer that is being labeled.  Each text property that can be set with a Data Defined Override will have this button beside the property: ![Data Defined Override Button](figures/lab7/Data_Defined_Override_Button.png "Data Defined Override Button")  The figure below shows a small example of where the Data Defined Override buttons are located and which properties can be set with the Overrides.
 
-![Data Defined Overrides in a Layers Label Properties](figures/Data_Defined_Overrides_in_a_Layers_Label_Properties.png "Data Defined Overrides in a Layers Label Properties")
+![Data Defined Overrides in a Layers Label Properties](figures/lab7/Data_Defined_Overrides_in_a_Layers_Label_Properties.png "Data Defined Overrides in a Layers Label Properties")
 
 To set an Override, click the Override button, then choose Field type->Field containing override value.  The figure below shows an override being set for the layer’s Font property.  This Font field contains the name of the font to be used to label its record.
 
-![Font Property Overridden with Layers Font Field](figures/Font_Property_Overridden_with_Layers_Font_Field.png "Font Property Overridden with Layers Font Field")
+![Font Property Overridden with Layers Font Field](figures/lab7/Font_Property_Overridden_with_Layers_Font_Field.png "Font Property Overridden with Layers Font Field")
 
 To get a description of what each Data Defined Override does, the expected input, valid input types, and current definition, click the Override button, then choose Description…  For example, the figure below shown the Override description for the Font property.
 
-![Font Property Data Definition Override Description](figures/Font_Property_Data_Definition_Override_Description.png "Font Property Data Definition Override Description")
+![Font Property Data Definition Override Description](figures/lab7/Font_Property_Data_Definition_Override_Description.png "Font Property Data Definition Override Description")
 
 Note that for the font property being overridden (shown in Figure 8), it expects a string input that contains the font family name.  Additionally, it will only accept a string field (other properties may accept multiple field formats).  Therefore, if we wish to have our record labeled using the Arial font family, we would create a field named ‘Font’ of format ‘string’, and store the string ‘Arial’ in the field for the record we want to label (example in figure below).
 
-![Font Property Data Definition Override and Associated Field in Attribute Table](figures/Font_Property_Data_Definition_Override_and_Associated_Field_in_Attribute_Table.png "Font Property Data Definition Override and Associated Field in Attribute Table")
+![Font Property Data Definition Override and Associated Field in Attribute Table](figures/lab7/Font_Property_Data_Definition_Override_and_Associated_Field_in_Attribute_Table.png "Font Property Data Definition Override and Associated Field in Attribute Table")
 
 Let’s start with moving the South River label to a more reasonable location.  This will be achieved in three steps:
 
@@ -167,8 +166,8 @@ You should have noticed that for the coordinates and rotation, it accepts fields
 
 4. Close the Label properties.
 5. Open the Attribute Table for the Waterways layer.
-6. Start editing by clicking the edit mode toggle ![Edit Mode Toggle Button](figures/Edit_Mode_Toggle_Button.png "Edit Mode Toggle Button").
-7. Create a new column by clicking the New column button ![New Column Button](figures/New_Column_Button.png "New Column Button").
+6. Start editing by clicking the edit mode toggle ![Edit Mode Toggle Button](figures/lab7/Edit_Mode_Toggle_Button.png "Edit Mode Toggle Button").
+7. Create a new column by clicking the New column button ![New Column Button](figures/lab7/New_Column_Button.png "New Column Button").
 8. Set the following properties for the new column:
 	+ Name: Label_X
 	+ Comment: X coordinate of label’s position
@@ -184,7 +183,7 @@ Now with the proper fields created, let’s link them to the Data Defined Overri
 
 13. Open the Label properties for the Waterways layer.
 14. Choose the Placement tab.
-15. Click the Data Defined Override button next to Coordinate X | Field type… | Label_X.  You will know the Override has been set when the Override button changes to a yellow fill color ![Override Button Yellow](figures/Override_Button_Yellow.png "Override Button Yellow").
+15. Click the Data Defined Override button next to Coordinate X | Field type… | Label_X.  You will know the Override has been set when the Override button changes to a yellow fill color ![Override Button Yellow](figures/lab7/Override_Button_Yellow.png "Override Button Yellow").
 16. Set the Override for Coordinate Y and Rotation to the appropriate attribute fields.
 17. Click OK to set the overrides.
 
@@ -193,17 +192,17 @@ Now we can do the final step, which is editing the label’s placement.
 18. Turn on the Labels toolbar if it is turned off.
 19. Start editing the Waterways layer by selecting the layer in the Layers list and choosing Layer | Toggle Editing.  When you toggle editing on, commands on the Labels toolbar (reference figure below) will be activated.  
 
-![Activated Labels Toolbar](figures/Activated_Labels_Toolbar.png "Activated Labels Toolbar")
+![Activated Labels Toolbar](figures/lab7/Activated_Labels_Toolbar.png "Activated Labels Toolbar")
 
 Let’s take a moment and explore the activated labels toolbar.  From left-to-right, the buttons represent:
 
-+ Labeling options ![Labeling Options Button](figures/Labeling_Options_Button.png "Labeling Options Button") – opens a dialog box allowing you to change the labeling properties.
-+ Highlight pinned labels ![Highlight Pinned Labels](figures/Highlight_Pinned_Labels.png "Highlight Pinned Labels") – any labels that have been modified (moved, rotated, etc…) and have values stored in the data defined override attribute fields is considered to be ‘pinned’.  Pinned labels will be highlighted when this button is toggled on.
-+ Pin/Unpin labels ![Pin Unpin Labels Button](figures/Pin_Unpin_Labels_Button.png "Pin Unpin Labels Button") – with this button toggled on, if you click a label, it will become, or stay, pinned (location stored in data defined override attribute values).  If you hold the shift-key on your keyboard and click a pinned label, the data defined override attribute values will be erased, the label will no longer be pinned, and it will return to its original location.
-+ Show/hide labels ![Show Hide Labels Button](figures/Show_Hide_Labels_Button.png "Show Hide Labels Button") (shown disabled) – with this button toggled on, if you click a label, it will become invisible.  Shift-clicking the label will make it visible again.  
-+ Move label ![Move Label Button](figures/Move_Label_Button.png "Move Label Button") – allows you to click and drag a label to define a new location.
-+ Rotate label ![Rotate Label Button](figures/Rotate_Label_Button.png "Rotate Label Button") – allows you to click and drag to rotate a label.  Holding the Control key on your keyboard while rotating, rotates the label in 15° increments.
-+ Change label ![Change Label Button](figures/Change_Label_Button.png "Change Label Button") – allows you to change the text of the label and any data defined override values you have enabled.
++ Labeling options ![Labeling Options Button](figures/lab7/Labeling_Options_Button.png "Labeling Options Button") – opens a dialog box allowing you to change the labeling properties.
++ Highlight pinned labels ![Highlight Pinned Labels](figures/lab7/Highlight_Pinned_Labels.png "Highlight Pinned Labels") – any labels that have been modified (moved, rotated, etc…) and have values stored in the data defined override attribute fields is considered to be ‘pinned’.  Pinned labels will be highlighted when this button is toggled on.
++ Pin/Unpin labels ![Pin Unpin Labels Button](figures/lab7/Pin_Unpin_Labels_Button.png "Pin Unpin Labels Button") – with this button toggled on, if you click a label, it will become, or stay, pinned (location stored in data defined override attribute values).  If you hold the shift-key on your keyboard and click a pinned label, the data defined override attribute values will be erased, the label will no longer be pinned, and it will return to its original location.
++ Show/hide labels ![Show Hide Labels Button](figures/lab7/Show_Hide_Labels_Button.png "Show Hide Labels Button") (shown disabled) – with this button toggled on, if you click a label, it will become invisible.  Shift-clicking the label will make it visible again.  
++ Move label ![Move Label Button](figures/lab7/Move_Label_Button.png "Move Label Button") – allows you to click and drag a label to define a new location.
++ Rotate label ![Rotate Label Button](figures/lab7/Rotate_Label_Button.png "Rotate Label Button") – allows you to click and drag to rotate a label.  Holding the Control key on your keyboard while rotating, rotates the label in 15° increments.
++ Change label ![Change Label Button](figures/lab7/Change_Label_Button.png "Change Label Button") – allows you to change the text of the label and any data defined override values you have enabled.
 
 We will use the Move and Rotate commands to move the South River label to a more desirable location.
 
@@ -215,7 +214,7 @@ We will use the Move and Rotate commands to move the South River label to a more
 
 Your label, properly placed, should resemble the figure below.
 
-![Example of Properly Placed River Label](figures/Example_of_Properly_Placed_River_Label.png "Example of Properly Placed River Label")
+![Example of Properly Placed River Label](figures/lab7/Example_of_Properly_Placed_River_Label.png "Example of Properly Placed River Label")
 
 24. Save your edits and stop the editing session.
 25. Open the Waterways Attribute Table and note that values have now been stored in the Label_X, Label_Y, and Rotation fields.
@@ -250,20 +249,20 @@ Before we change labels sizes of individual parks, let’s set up the text wrapp
 33. Select the Formatting tab.
 34. Set Wrap on character to ‘\\n’ (without the quotes). The property should look like the figure below.  The ‘\\n’ character sequence is a common way to denote that a carriage return and line feed should be inserted at that location in a string of text.  We will use that sequence to identify locations in label text where the label should continue on the next line.
 
-![Wrap on Character Property for Natural Layer](figures/Wrap_on_Character_Property_for_Natural_Layer.png "Wrap on Character Property for Natural Layer")
+![Wrap on Character Property for Natural Layer](figures/lab7/Wrap_on_Character_Property_for_Natural_Layer.png "Wrap on Character Property for Natural Layer")
 
 With the font size and wrap on text properties set, let’s change a park’s label to see how they work.
 
 35. Click OK to save and close the Natural layer’s properties if you haven’t already.
 36. Start editing on the Natural layer.
-37. On the Labels Toolbar, click the ‘Change Label’ button ![Change Label Button](figures/Change_Label_Button.png "Change Label Button") to toggle it on.
+37. On the Labels Toolbar, click the ‘Change Label’ button ![Change Label Button](figures/lab7/Change_Label_Button.png "Change Label Button") to toggle it on.
 38. Click the Lappin Park label (you may need to zoom out to find the park).  This will open the Label properties dialog box.
 39. Chang the following label properties (shown changed in figure below):
 	+ Text: Lappin\\nPark (no spaces anywhere in the text)
 	+ Font:
 		+ Size: 7.0
 
-![Modified Lappin Park Label Properties](figures/Modified_Lappin_Park_Label_Properties.png "Modified Lappin Park Label Properties")
+![Modified Lappin Park Label Properties](figures/lab7/Modified_Lappin_Park_Label_Properties.png "Modified Lappin Park Label Properties")
 
 40. With the properties set, click OK to save the label properties.  Note that the Lappin Park label is now on two separate lines and is small enough to fit inside the park polygon at this scale.
 41. Move the Lappin Park label so that it is completely inside the park.
@@ -286,9 +285,9 @@ With the waterways and parks labeled, all that is left to label are the roads.  
 48. In the Labeling options section, set Show label property’s Data Defined Override to the LVisibility attribute (refer to figure below).  
 49. Click OK to set the Data Defined Override.
 
-![Show Label Property](figures/Show_Label_Property.png "Show Label Property")
+![Show Label Property](figures/lab7/Show_Label_Property.png "Show Label Property")
 
-To show or hide a label, you will start editing the layer, then, on the Label toolbar, click the Show/hide label button ![Show Hide Labels Button Activated](figures/Show_Hide_Labels_Button_Activated.png "Show Hide Labels Button Activated"), then click on a label to show it, or shift-click a label to hide it.  We won’t do that now, however, you may wish to do this in Task 3.
+To show or hide a label, you will start editing the layer, then, on the Label toolbar, click the Show/hide label button ![Show Hide Labels Button Activated](figures/lab7/Show_Hide_Labels_Button_Activated.png "Show Hide Labels Button Activated"), then click on a label to show it, or shift-click a label to hide it.  We won’t do that now, however, you may wish to do this in Task 3.
 
 50. Create a new attribute with the following properties:
 	+ Name: LabelFont
@@ -302,7 +301,7 @@ To show or hide a label, you will start editing the layer, then, on the Label to
 
 The last labeling option we will set with a Data Defined Override is the font color.  This override needs a short explanation on how the values should be stored in the attribute.  First, let’s look at the data definition description for the font color property, shown in the figure below.
 
-![Label Color Data Definition Description](figures/Label_Color_Data_Definition_Description.png "Label Color Data Definition Description")
+![Label Color Data Definition Description](figures/lab7/Label_Color_Data_Definition_Description.png "Label Color Data Definition Description")
 
 For the expected input, it was a list of three values (red, green, and blue), and each value ranging between the numbers 0 and 255.  The attribute field should be of type Text (string).  So, as an example, to specify the color white, we would store in the attribute this string:  255,255,255. For black, the value would be: 0,0,0.  So, what we need to figure out is what is the maximum number of characters that we would need to hold in our new attribute field?  Well, since white uses the maximum value of 255 for red, green, and blue, we can count 11 characters (nine numbers, plus two commas).  So, with that sorted, let’s create the attribute field to hold the label color.
 
@@ -324,7 +323,7 @@ Let’s set the roads with the type attribute of footway, path, pedestrian, or t
 60. Press the Select Features button to open the Select by Expression dialog box.
 61. Set the following expression (shown in figure below): "type" = 'footway' OR "type" = 'path' OR "type" = 'pedestrian' OR "type" = 'track' 
 
-![Road Type Selection](figures/Road_Type_Selection.png "Road Type Selection")
+![Road Type Selection](figures/lab7/Road_Type_Selection.png "Road Type Selection")
 
 62. Click Select button to select 26 records.  
 63. Click Close button to dismiss the Select by Expression dialog box.
@@ -334,7 +333,7 @@ Let’s set the roads with the type attribute of footway, path, pedestrian, or t
 	+ Existing field dropdown box: LabelColor
 	+ Expression: '75,67,64'  (include the single quotes)
 
-![Color Expression for Selected Records in LabelColor Field](figures/Color_Expression_for_Selected_Records_in_LabelColor_Field.png "Color Expression for Selected Records in LabelColor Field")
+![Color Expression for Selected Records in LabelColor Field](figures/lab7/Color_Expression_for_Selected_Records_in_LabelColor_Field.png "Color Expression for Selected Records in LabelColor Field")
 
 65. Click OK to set the value of the selected records’ LabelColor attributes to 75,67,64.  The labels for the selected records will now be dark grey, and the other road features will still be black (0,0,0).
 66. Save the QGIS Project.

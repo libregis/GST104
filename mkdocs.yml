@@ -1,0 +1,13 @@
+# Project information
+site_name: 'GST104: Cartographic Design'
+site_description: 'GST 104: Cartographic Design'
+
+theme:
+  name: 'readthedocs'
+
+ # palette:
+ #   primary: 'light green'
+ #   accent: 'green'
+
+#markdown_extensions:
+#  - admonition
